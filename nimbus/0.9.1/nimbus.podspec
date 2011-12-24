@@ -2,7 +2,7 @@
 # * clean_paths
 Pod::Spec.new do |s|
   s.name     = 'Nimbus'
-  s.version  = '0.9.0'
+  s.version  = '0.9.1'
   s.license  = 'Apache License, Version 2.0'
   s.summary  = 'An iOS framework whose growth is bounded by O(documentation).'
   s.homepage = 'http://jverkoey.github.com/nimbus/'
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
                  'Peter Steinberger' => 'me@petersteinberger.com',
                  'Hwee-Boon Yar'     => 'hboon@motionobj.com' }
 
-  s.source   = { :git => 'https://github.com/jverkoey/nimbus.git', :tag => '0.9.0' }
+  s.source   = { :git => 'https://github.com/jverkoey/nimbus.git', :tag => '0.9.1' }
 
   s.description = 'Nimbus is an iOS framework whose feature set grows only as fast as its documentation. '  \
                   'By focusing on documentation first and features second, Nimbus hopes to be a framework ' \
@@ -85,13 +85,6 @@ Pod::Spec.new do |s|
     models.dependency 'Nimbus/Core'
   end
 
-  s.subspec 'ASIHTTPRequest' do |asi|
-    asi.summary = 'Nimbus ASIHTTPRequest integration.'
-    asi.source_files = 'src/ASIHTTPRequest/src/NI*.{h,m}'
-    asi.dependency 'Nimbus/Core'
-    asi.dependency 'ASIHTTPRequest'
-  end
-
   s.subspec 'NetworkImage' do |image|
     image.homepage     = 'http://jverkoey.github.com/nimbus/group___nimbus_network_image.html'
     image.summary      = 'Image views that load images from the network and efficiently store the result in memory and on disk.'
@@ -122,25 +115,6 @@ Pod::Spec.new do |s|
     photos.source_files = 'src/photos/src'
     photos.resource     = 'src/photos/resources/NimbusPhotos.bundle'
     photos.dependency 'Nimbus/Core'
-  end
-
-  s.subspec 'Processors' do |processors|
-    processors.homepage     = 'http://jverkoey.github.com/nimbus/group___nimbus_processors.html'
-    processors.summary      = 'Processors are for performing complex data manipulation on separate threads.'
-    processors.description  = "Processing data is a potential bottleneck for any application that manipulates data. Older "   \
-                              "iPhone and iPod touch models get the worst of this with their slower processors and smaller "  \
-                              "amounts of ram. As such, it's very important to attempt to push off any data processing from " \
-                              "the main UI thread. Nimbus processors provide a consistent means of processing data in a "     \
-                              "defered way using NSOperations."
-    processors.source_files = 'src/processors/src'
-    processors.dependency 'Nimbus/ASIHTTPRequest'
-
-    processors.subspec 'JSON' do |json|
-      json.homepage     = 'http://jverkoey.github.com/nimbus/interface_n_i_j_s_o_n_kit_processor_h_t_t_p_request.html'
-      json.summary      = 'A processor that uses JSONKit to turn the JSON response into objects.'
-      json.source_files = 'src/processors/src_JSONKit'
-      json.dependency 'JSONKit'
-    end
   end
 
   s.subspec 'WebController' do |web_controller|
