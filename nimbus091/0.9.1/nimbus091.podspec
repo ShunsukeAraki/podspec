@@ -26,5 +26,7 @@ Pod::Spec.new do |s|
                   'simple to understand.'
 
   s.platform = :ios
-
+  s.source_files = 'src/core/src','src/css/src','src/attributedlabel/src','src/interapp/src','src/launcher/src','src/models/src','src/photos/src','src/webcontroller/src'
+  s.framework = 'CoreText'
+  s.resource = 'src/photos/resources/NimbusPhotos.bundle','src/webcontroller/resources/NimbusWebController.bundle'
 end
