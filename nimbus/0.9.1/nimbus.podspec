@@ -1,7 +1,7 @@
 # TODO
 # * clean_paths
 Pod::Spec.new do |s|
-  s.name     = 'Nimbus'
+  s.name     = 'nimbus'
   s.version  = '0.9.1'
   s.license  = 'Apache License, Version 2.0'
   s.summary  = 'An iOS framework whose growth is bounded by O(documentation).'
@@ -40,7 +40,7 @@ Pod::Spec.new do |s|
     css.homepage     = 'http://jverkoey.github.com/nimbus/group___nimbus_c_s_s.html'
     css.summary      = 'Nimbus CSS allows you to use cascading stylesheets to theme your native iOS application.'
     css.source_files = 'src/css/src'
-    css.dependency 'Nimbus/Core'
+    css.dependency 'nimbus/Core'
   end
 
   s.subspec 'AttributedLabel' do |label|
@@ -48,14 +48,14 @@ Pod::Spec.new do |s|
     label.summary      = 'The Nimbus Attributed Label is a UILabel that uses NSAttributedString to provide custom text styling.'
     label.source_files = 'src/attributedlabel/src'
     label.framework    = 'CoreText'
-    label.dependency 'Nimbus/Core'
+    label.dependency 'nimbus/Core'
   end
 
   s.subspec 'Interapp' do |interapp|
     interapp.homepage     = 'http://jverkoey.github.com/nimbus/group___nimbus_interapp.html'
     interapp.summary      = 'Nimbus inter-application communication feature for interacting with other applications installed on the device.'
     interapp.source_files = 'src/interapp/src'
-    interapp.dependency 'Nimbus/Core'
+    interapp.dependency 'nimbus/Core'
   end
 
   s.subspec 'Launcher' do |launcher|
@@ -69,7 +69,7 @@ Pod::Spec.new do |s|
                             "repositioned using a tap and hold gesture (though this has not been implemented "   \
                             "yet in Nimbus' launcher, see the todo list for more details)."
     launcher.source_files = 'src/launcher/src'
-    launcher.dependency 'Nimbus/Core'
+    launcher.dependency 'nimbus/Core'
   end
 
   s.subspec 'Models' do |models|
@@ -82,14 +82,7 @@ Pod::Spec.new do |s|
                           "controller can then focus on the broader implementation details rather than implementing " \
                           "dozens of data source methods."
     models.source_files = 'src/models/src'
-    models.dependency 'Nimbus/Core'
-  end
-
-  s.subspec 'NetworkImage' do |image|
-    image.homepage     = 'http://jverkoey.github.com/nimbus/group___nimbus_network_image.html'
-    image.summary      = 'Image views that load images from the network and efficiently store the result in memory and on disk.'
-    image.source_files = 'src/networkimage/src'
-    image.dependency 'Nimbus/ASIHTTPRequest'
+    models.dependency 'nimbus/Core'
   end
 
   s.subspec 'Overview' do |overview|
@@ -100,7 +93,7 @@ Pod::Spec.new do |s|
                             "current memory usage to console logs to configuration settings."
     overview.source_files = 'src/overview/src'
     overview.resource     = 'src/overview/resources/NimbusOverviewer.bundle'
-    overview.dependency 'Nimbus/Core'
+    overview.dependency 'nimbus/Core'
   end
 
   s.subspec 'Photos' do |photos|
@@ -114,7 +107,7 @@ Pod::Spec.new do |s|
                           "high-quality photo experience."
     photos.source_files = 'src/photos/src'
     photos.resource     = 'src/photos/resources/NimbusPhotos.bundle'
-    photos.dependency 'Nimbus/Core'
+    photos.dependency 'nimbus/Core'
   end
 
   s.subspec 'WebController' do |web_controller|
@@ -127,6 +120,6 @@ Pod::Spec.new do |s|
                                   "active requests."
     web_controller.source_files = 'src/webcontroller/src'
     web_controller.resource     = 'src/webcontroller/resources/NimbusWebController.bundle'
-    web_controller.dependency 'Nimbus/Core'
+    web_controller.dependency 'nimbus/Core'
   end
 end
